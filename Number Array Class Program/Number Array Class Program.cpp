@@ -10,6 +10,13 @@ using namespace std;
 
 int main()
 {
+    //****** CODE FOR RANDOM NUMBER GENERATOR ******//
+    
+    random_device rd("default");
+    mt19937 gen(rd());
+
+    uniform_real_distribution<> dis(1.0, 20.0);
+    
     //std::cout << "Hello World!\n";
 
     //NumberArray();
@@ -18,10 +25,7 @@ int main()
 
     //NumberArray();
 
-    random_device rd("default");
-    mt19937 gen(rd());
 
-    uniform_real_distribution<> dis(1.0, 20.0);
 
     //arr1.Print();
 
