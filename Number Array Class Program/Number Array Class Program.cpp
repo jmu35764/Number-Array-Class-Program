@@ -17,17 +17,33 @@ int main()
 
     uniform_real_distribution<> dis(1.0, 20.0);
     
-    //std::cout << "Hello World!\n";
+    //****** CONSTRUCTOR TEST ******//
+    
+    //DEFAULT CONTRUCTOR TEST//
 
-    //NumberArray();
+    // Default size of the arrays is set to 12, so 
+    // there should be 12 instances of values printed 
+    NumberArray arr1;
+    arr1.Print();
 
-    // NumberArray arr1;
+    //PARAMETERIZED CONSTRUCTOR TEST//
+    // Here we are setting the index of arr2 to be 5.
+    // So there should be 5 values that get printed.
+    NumberArray arr2(5);
+    arr2.Print();
 
-    //NumberArray();
+    
+    //****** SET NUMBER AND GET NUMBER TESTS ******//
+    arr2.setNumber(0, 10);
+    arr2.setNumber(2, 12);
+    arr2.setNumber(4, 15);
+
+    cout << endl << arr2.getNumber(0) << endl;
+    cout << arr2.getNumber(2) << endl;
+    cout << arr2.getNumber(4) << endl;
 
 
-
-    //arr1.Print();
+    
 
     //arr1.setNumber(13, dis(gen));
 
@@ -42,7 +58,7 @@ int main()
     //arr2.Print();
 
 
-    NumberArray arr3(5);
+    //NumberArray arr3(5);
     /*
     arr3.setNumber(0, 12);
     arr3.setNumber(6, 15);
@@ -58,7 +74,7 @@ int main()
    
     //double value = 2;
 
-    for (int i = 0; i < 5; i++)
+    /*for (int i = 0; i < 5; i++)
     {
         arr3.setNumber(i, dis(gen));
 
@@ -69,7 +85,7 @@ int main()
 
     cout << endl << arr3.getMax() << endl;
     cout << arr3.getMin() << endl;
-    cout << arr3.getAverage() << endl;
+    cout << arr3.getAverage() << endl;*/
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

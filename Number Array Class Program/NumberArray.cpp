@@ -104,6 +104,6 @@ void NumberArray::Print() const
 {
 	for (int i = 0; i < a_size; i++)
 	{
-		cout << setprecision(3) << data[i] << endl;
+		cout << setprecision(3) << data[i] << endl << endl;
 	}
 }
