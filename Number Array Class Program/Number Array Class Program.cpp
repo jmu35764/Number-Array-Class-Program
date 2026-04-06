@@ -16,18 +16,16 @@ int main()
 
     NumberArray arr1;
 
+    //NumberArray();
+
     random_device rd("default");
     mt19937 gen(rd());
 
     uniform_real_distribution<> dis(1.0, 20.0);
 
-    double test[12];
+    arr1.Print();
 
-    for (int i = 0; i < 12; i++)
-    {
-        test[i] = dis(gen);
-        cout << test[i] << endl;
-    }
+
 
    
 }
