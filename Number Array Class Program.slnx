@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Number Array Class Program/Number Array Class Program.vcxproj" />
+  <Project Path="Number Array Class Program/Number Array Class Program.vcxproj" Id="b8e9580d-3609-4855-b299-36076dac247a" />
 </Solution>

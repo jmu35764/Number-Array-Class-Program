@@ -3,7 +3,7 @@
 
 using namespace std;
 
-NumberArray::NumberArray(int size = MAX_SIZE)
+NumberArray::NumberArray(int size)
 {
 	a_size = size;
 	
@@ -55,7 +55,7 @@ double NumberArray::getNumber(int index) const
 
 double NumberArray::getMin() const
 {
-	int min_val = data[0];
+	double min_val = data[0];
 
 	for (int i = 0; i < MAX_SIZE; i++)
 	{
@@ -70,7 +70,7 @@ double NumberArray::getMin() const
 
 double NumberArray::getMax() const
 {
-	int max_val = data[0];
+	double max_val = data[0];
 
 	for (int i = 0; i < MAX_SIZE; i++)
 	{
@@ -85,8 +85,8 @@ double NumberArray::getMax() const
 
 double NumberArray::getAverage () const
 {
-	int sum = 0;
-	int avg_val;
+	double sum = 0;
+	double avg_val;
 
 	for (int i = 0; i < MAX_SIZE; i++)
 	{

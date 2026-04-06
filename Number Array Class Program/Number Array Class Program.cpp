@@ -12,11 +12,20 @@ int main()
 {
     //std::cout << "Hello World!\n";
 
-    NumberArray();
+    //NumberArray();
 
     random_device rd("default");
+    mt19937 gen(rd());
 
-    uniform_real_distribution uid(1, 100);
+    uniform_real_distribution<> dis(1.0, 20.0);
+
+    double test[12];
+
+    for (int i = 0; i < 12; i++)
+    {
+        test[i] = dis(gen);
+        cout << test[i] << endl;
+    }
 
    
 }
