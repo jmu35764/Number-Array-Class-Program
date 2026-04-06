@@ -1,5 +1,6 @@
 #include "NumberArray.h"
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -34,7 +35,7 @@ void NumberArray::setNumber(int index, double value)
 	else
 	{
 		cout << "Invalid Index Input" << endl;
-		data[index] = 0.0;
+		//return 0.0;
 	}
 }
 
@@ -47,7 +48,7 @@ double NumberArray::getNumber(int index) const
 
 	else
 	{
-		//cout << "Placeholder for static default value" << endl;
+		cout << "Invalid Index Input" << endl;
 		return 0.0;
 	}
 }
@@ -57,7 +58,7 @@ double NumberArray::getMin() const
 {
 	double min_val = data[0];
 
-	for (int i = 0; i < MAX_SIZE; i++)
+	for (int i = 0; i < a_size; i++)
 	{
 		if (data[i] < min_val)
 		{
@@ -74,7 +75,7 @@ double NumberArray::getMax() const
 
 	for (int i = 0; i < MAX_SIZE; i++)
 	{
-		if (data[i] < max_val)
+		if (data[i] > max_val)
 		{
 			max_val = data[i];
 		}
@@ -88,12 +89,12 @@ double NumberArray::getAverage () const
 	double sum = 0;
 	double avg_val;
 
-	for (int i = 0; i < MAX_SIZE; i++)
+	for (int i = 0; i < a_size; i++)
 	{
-		sum =+ data[i];
+		sum = sum + data[i];
 	}
 
-	avg_val = sum / MAX_SIZE;
+	avg_val = sum / a_size;
 
 	return avg_val;
 
@@ -103,6 +104,6 @@ void NumberArray::Print() const
 {
 	for (int i = 0; i < a_size; i++)
 	{
-		cout << data[i] << endl;
+		cout << setprecision(3) << data[i] << endl;
 	}
 }
