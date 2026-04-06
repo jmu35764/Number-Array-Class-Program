@@ -7,6 +7,10 @@
 
 using namespace std;
 
+// The purpose of this code is to create a dynamically allocated array using
+// objects and prove that it works by testing different types of arrays and 
+// confirming that the values are being stored properly
+
 
 int main()
 {

@@ -4,13 +4,15 @@
 
 using namespace std;
 
+
 NumberArray::NumberArray(int size)
 {
 	a_size = size;
 	
-	//data = nullptr;
-	data = new double[size];
+	data = nullptr;
+	data = new double[size]; // Allocate data
 
+	// Set all values of the array to zero when starting out
 	for (int i = 0; i < size; i++)
 	{
 		data[i] = 0.0;
@@ -20,32 +22,36 @@ NumberArray::NumberArray(int size)
 
 NumberArray::~NumberArray()
 {
-	delete[] data;
+	delete[] data; // Deallocate memory for array
 
 	cout << "Memory has been deallocated" << endl;
 }
 
 void NumberArray::setNumber(int index, double value)
 {
+	// Validate if the index argument falls with in the bounds of the index
 	if (index >= 0 && index < a_size)
 	{
 		data[index] = value;
 	}
 
+	// If the index argument value is not valid, show a message
 	else
 	{
 		cout << "Invalid Index Input" << endl;
-		//return 0.0;
 	}
 }
 
 double NumberArray::getNumber(int index) const
 {
+	// Validate if the index argument falls with in the bounds of the index
 	if (index >= 0 && index < a_size)
 	{
 		return data[index];
 	}
 
+	// If the index argument value is not valid, show a message
+	// and return a constant value 0.0
 	else
 	{
 		cout << "Invalid Index Input" << endl;
@@ -58,8 +64,11 @@ double NumberArray::getMin() const
 {
 	double min_val = data[0];
 
+	// For loop detmining smallest value
 	for (int i = 0; i < a_size; i++)
 	{
+		// If the current value in the array is smaller than the previous value
+		// set the current value as the minimum value.
 		if (data[i] < min_val)
 		{
 			min_val = data[i];
@@ -73,8 +82,11 @@ double NumberArray::getMax() const
 {
 	double max_val = data[0];
 
+	// For loop detmining largest value
 	for (int i = 0; i < MAX_SIZE; i++)
 	{
+		// If the current value in the array is larger than the previous value
+		// set the current value as the maximum value.
 		if (data[i] > max_val)
 		{
 			max_val = data[i];
@@ -89,11 +101,13 @@ double NumberArray::getAverage () const
 	double sum = 0;
 	double avg_val;
 
+	//Add up all of the values in the array
 	for (int i = 0; i < a_size; i++)
 	{
 		sum = sum + data[i];
 	}
 
+	// Divide by the size of the array
 	avg_val = sum / a_size;
 
 	return avg_val;

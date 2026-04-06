@@ -6,12 +6,15 @@ class NumberArray
 {
 private:
 
-	int a_size;
-	double *data = nullptr;
-	static const int MAX_SIZE = 12;
+	int a_size; // Array size variable
+	double* data = nullptr;
+	static const int MAX_SIZE = 12; // Default array size
 
 public:
-	//int a_size;
+
+	// The constructor defaults to the value of MAX_SIZE (12) if no values
+	// are added to the object
+
 	NumberArray(int size = MAX_SIZE);
 
 	~NumberArray();
