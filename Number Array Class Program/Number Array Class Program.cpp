@@ -2,10 +2,23 @@
 //
 
 #include <iostream>
+#include <random>
+#include "NumberArray.h"
+
+using namespace std;
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //std::cout << "Hello World!\n";
+
+    NumberArray();
+
+    random_device rd("default");
+
+    uniform_real_distribution uid(1, 100);
+
+   
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

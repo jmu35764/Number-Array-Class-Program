@@ -7,7 +7,7 @@ class NumberArray
 private:
 
 	int a_size;
-	double* data;
+	double *data = nullptr;
 	static const int MAX_SIZE = 12;
 
 public:
@@ -25,7 +25,7 @@ public:
 
 	double getAverage() const;
 
-
+	void Print() const;
 };
 
 #endif // !NUMARRAY_h
