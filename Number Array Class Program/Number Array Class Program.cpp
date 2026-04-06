@@ -14,6 +14,8 @@ int main()
 
     //NumberArray();
 
+    NumberArray arr1;
+
     random_device rd("default");
     mt19937 gen(rd());
 

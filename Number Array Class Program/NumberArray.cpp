@@ -12,7 +12,7 @@ NumberArray::NumberArray(int size)
 
 	for (int i = 0; i < size; i++)
 	{
-		data[i] = 0;
+		data[i] = 0.0;
 	}
 
 }
@@ -34,7 +34,7 @@ void NumberArray::setNumber(int index, double value)
 	else
 	{
 		cout << "Invalid Index Input" << endl;
-		data[index] = 0;
+		data[index] = 0.0;
 	}
 }
 
@@ -101,7 +101,7 @@ double NumberArray::getAverage () const
 
 void NumberArray::Print() const
 {
-	for (int i = 0; i < MAX_SIZE; i++)
+	for (int i = 0; i < a_size; i++)
 	{
 		cout << data[i] << endl;
 	}
