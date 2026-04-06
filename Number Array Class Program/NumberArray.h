@@ -32,4 +32,4 @@ public:
 	void Print() const;
 };
 
-#endif // !NUMARRAY_h
+#endif
