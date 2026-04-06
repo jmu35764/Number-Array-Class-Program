@@ -11,6 +11,7 @@ private:
 	static const int MAX_SIZE = 12;
 
 public:
+	//int a_size;
 	NumberArray(int size = MAX_SIZE);
 
 	~NumberArray();

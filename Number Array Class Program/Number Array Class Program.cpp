@@ -15,14 +15,20 @@ int main()
     random_device rd("default");
     mt19937 gen(rd());
 
-    uniform_real_distribution<> dis(1.0, 20.0);
+    uniform_real_distribution<> dis(1.0, 20.0);  // Set random values from 1 to 20
     
+    double k_value; // Known value variable
+    double r_value; // Random value variable
+
     //****** CONSTRUCTOR TEST ******//
     
     //DEFAULT CONTRUCTOR TEST//
 
     // Default size of the arrays is set to 12, so 
     // there should be 12 instances of values printed 
+
+    cout << "DEFAULT CONSTRUCTOR TEST" << endl;
+
     NumberArray arr1;
     arr1.Print();
     cout << endl;
@@ -30,64 +36,82 @@ int main()
     //PARAMETERIZED CONSTRUCTOR TEST//
     // Here we are setting the index of arr2 to be 5.
     // So there should be 5 values that get printed.
+    cout << "PARAMETERIZED CONSTRUCTOR TEST" << endl;
+
     NumberArray arr2(5);
     arr2.Print();
     cout << endl;
 
     
     //****** SET NUMBER AND GET NUMBER TESTS ******//
+
+    // Valid index Test
+    // Here the code is testing if the setNumber function is working
+    // This is done by storing a value in a particular part of the
+    // array and then print the values in those indexes using the
+    // getNumber member function
+    cout << "SET NUMBER AND GET NUMBER TEST";
+
     arr2.setNumber(0, 10);
     arr2.setNumber(2, 12);
     arr2.setNumber(4, 15);
 
     cout << endl << arr2.getNumber(0) << endl;
     cout << arr2.getNumber(2) << endl;
-    cout << arr2.getNumber(4) << endl;
+    cout << arr2.getNumber(4) << endl << endl;
 
+    // Out of bounds index
 
+    cout << "OUT OF BOUNDS INDEX TEST" << endl;
+    arr2.setNumber(-1, 2); // Selects index value lower than 0
+    arr2.setNumber(5, 3);  // Selects index value higher than index
+
+    // Show that the values in arr2 have not been altered.
+    arr2.Print();
+    cout << endl << endl;
     
+    cout << "GET NUMBER FROM INVALID INDEX TEST" << endl;
+    cout << arr2.getNumber(-1) << endl;
+    cout << arr2.getNumber(5) << endl << endl;
 
-    //arr1.setNumber(13, dis(gen));
 
-    //NumberArray arr2(5);
+    //****** STATISTICAL FUNCTION TEST: KNOWN VALUES ******//
     
-    /*for (int i = 0; i < 12; i++)
+    // Resetting value of arr2 to start at 2 and increase by increments of 2
+    // The max, min, and average values should be as follows:
+    // 10, 2, 6
+    cout << "STATISTICAL FUNCTION TEST: KNOWN VALUES";
+
+    k_value = 2;
+
+    for (int i = 0; i < 5; i++)
     {
-        arr1.setNumber(i, dis(gen));
-    }*/
-        
-    //arr1.Print();
-    //arr2.Print();
+        arr2.setNumber(i, k_value);
 
-
-    //NumberArray arr3(5);
-    /*
-    arr3.setNumber(0, 12);
-    arr3.setNumber(6, 15);
-    arr3.setNumber(11, 20);
-    arr3.setNumber(-1, 10);
-    arr3.setNumber(12, 10);
- 
-    cout << arr3.getNumber(0) << endl;
-    cout << arr3.getNumber(6) << endl;
-    cout << arr3.getNumber(11) << endl;
-    cout << arr3.getNumber(12) << endl;
-    */
-   
-    //double value = 2;
-
-    /*for (int i = 0; i < 5; i++)
-    {
-        arr3.setNumber(i, dis(gen));
-
-        //value = value + 2;
+        k_value = k_value + 2; // Increase value by 2
     }
+    
+    cout << endl << arr2.getMax() << endl;
+    cout << arr2.getMin() << endl;
+    cout << arr2.getAverage() << endl << endl;
 
-    arr3.Print();
 
-    cout << endl << arr3.getMax() << endl;
-    cout << arr3.getMin() << endl;
-    cout << arr3.getAverage() << endl;*/
+    //****** STATISTICAL FUNCTION TEST: RANDOM VALUES ******//
+    // Resetting values of arr2 to be filled by random values
+
+    cout << "STATISTICAL FUNCTION TEST: RANDOM VALUES" << endl;
+
+    for (int i = 0; i < 5; i++)
+    {
+        arr2.setNumber(i, dis(gen));
+    }
+    arr2.Print();
+    cout << endl;
+
+    cout << endl << arr2.getMax() << endl;
+    cout << arr2.getMin() << endl;
+    cout << arr2.getAverage() << endl;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
