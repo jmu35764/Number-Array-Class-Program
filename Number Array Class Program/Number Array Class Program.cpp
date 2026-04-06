@@ -25,12 +25,14 @@ int main()
     // there should be 12 instances of values printed 
     NumberArray arr1;
     arr1.Print();
+    cout << endl;
 
     //PARAMETERIZED CONSTRUCTOR TEST//
     // Here we are setting the index of arr2 to be 5.
     // So there should be 5 values that get printed.
     NumberArray arr2(5);
     arr2.Print();
+    cout << endl;
 
     
     //****** SET NUMBER AND GET NUMBER TESTS ******//
