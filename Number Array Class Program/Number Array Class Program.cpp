@@ -22,8 +22,7 @@ int main()
     uniform_real_distribution<> dis(1.0, 20.0);  // Set random values from 1 to 20
     
     double k_value; // Known value variable
-    double r_value; // Random value variable
-
+    
     //****** CONSTRUCTOR TEST ******//
     
     //DEFAULT CONTRUCTOR TEST//
